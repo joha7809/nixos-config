@@ -1,5 +1,5 @@
 [
-  "$mod, RETURN, exec, kitty"
+  "$mod, RETURN, exec, alacritty"
   "$mod, D, exec, wofi --show drun"
   "$mod, V, exec, cursor-clip"
   "$mod, Q, killactive"

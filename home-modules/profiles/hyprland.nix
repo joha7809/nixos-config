@@ -5,5 +5,6 @@
     ../desktop/hyprland/hyprland.nix
     ../desktop/gtk.nix
     ../desktop/waybar/waybar.nix
+    ../desktop/hyprland/hyprpaper.nix
   ];
 }

@@ -64,6 +64,7 @@
   ];
 
   "exec-once" = [
+    "hyprpaper"
     "waybar"
     "cursor-clip --daemon"
     "mako"

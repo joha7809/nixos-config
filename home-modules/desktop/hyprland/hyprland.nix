@@ -2,7 +2,7 @@
 {
 
   home.packages = with pkgs; [
-    kitty
+    alacritty
     wofi
     waybar
     mako
@@ -20,6 +20,7 @@
 
   programs.waybar.enable = true;
   programs.hyprlock.enable = true;
+  programs.alacritty.enable = true;
 
   xdg.portal = {
     enable = true;
