@@ -1,5 +1,4 @@
-
-{ self, inputs, ... }: {
+{ self, ... }: {
   flake.nixosModules.JoesMachineConfiguration = { config, lib, pkgs, ... }:
 	{
 	imports =
@@ -21,14 +20,8 @@
 	# Set your time zone.
 	time.timeZone = "Europe/Copenhagen";
 
-	users.users.joe = {
-	  isNormalUser = true;
-	  extraGroups = [ "wheel" "networkmanager" ];
-          initialPassword = "test";
-        };
-
-        home-manager.users.joe = self.homeManagerModules.default;
-        console.useXkbConfig = true;
+  joe.homeProfile = "hyprland";
+  console.useXkbConfig = true;
 
 	security.sudo.enable = true;
 	security.sudo.wheelNeedsPassword = false;
@@ -40,16 +33,6 @@
 
 	programs.vim.enable = true;
 	programs.firefox.enable = true;
-	programs.hyprland = {
-	  enable = true;
-	  xwayland.enable = true;
-	};
-        services.xserver.enable = true;
-        services.xserver.displayManager.gdm.enable = true;
-
-        security.polkit.enable = true;
-        xdg.portal.enable = true;
-        xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
 	};
 }
