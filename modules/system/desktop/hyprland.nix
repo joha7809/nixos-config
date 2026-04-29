@@ -3,11 +3,16 @@
     environment.systemPackages = with pkgs; [
       kitty
       wofi
+      waybar
     ];
 
     programs.hyprland = {
       enable = true;
       xwayland.enable = true;
+    };
+
+    programs.waybar = {
+      enable = true;
     };
 
     services.xserver.enable = true;

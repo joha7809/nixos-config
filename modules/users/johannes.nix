@@ -10,7 +10,7 @@
       options.johannes.homeProfile = lib.mkOption {
         type = lib.types.enum [ "hyprland" "gnome" ];
         default = "hyprland";
-        description = "Home Manager desktop profile for user joe.";
+        description = "Home Manager desktop profile for user johannes.";
       };
 
       config = {
@@ -19,7 +19,7 @@
           extraGroups = [ "wheel" "networkmanager" ];
         };
 
-        home-manager.users.joe = {
+        home-manager.users.johannes = {
           imports = [ homeProfile ];
         };
       };

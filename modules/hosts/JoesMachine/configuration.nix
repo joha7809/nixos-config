@@ -1,4 +1,5 @@
-{ self, ... }: {
+
+{ self, inputs, ... }: {
   flake.nixosModules.JoesMachineConfiguration = { config, lib, pkgs, ... }:
 	{
 	imports =
@@ -12,16 +13,13 @@
 	boot.loader.systemd-boot.enable = true;
 	boot.loader.efi.canTouchEfiVariables = true;
 
-	networking.hostName = "nixos"; # Define your hostname.
-
 	# Configure network connections interactively with nmcli or nmtui.
 	networking.networkmanager.enable = true;
 
 	# Set your time zone.
 	time.timeZone = "Europe/Copenhagen";
 
-  joe.homeProfile = "hyprland";
-  console.useXkbConfig = true;
+        console.useXkbConfig = true;
 
 	security.sudo.enable = true;
 	security.sudo.wheelNeedsPassword = false;
@@ -33,6 +31,5 @@
 
 	programs.vim.enable = true;
 	programs.firefox.enable = true;
-
-	};
+      };
 }

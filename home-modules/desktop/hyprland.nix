@@ -3,5 +3,14 @@
     $mod = SUPER
     bind = $mod, RETURN, exec, kitty
     bind = $mod, D, exec, wofi --show drun
+
+    input {
+      kb_layout = dk
+      kb_variant =
+      kb_model =
+      kb_rules =
+    }
+
+    exec-once = waybar
   '';
 }
