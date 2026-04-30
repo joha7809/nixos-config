@@ -10,6 +10,7 @@
 	      self.nixosModules.user-johannes
 	      self.nixosModules.JoesMachineConfiguration
 	      self.nixosModules.keyboard
+	      self.nixosModules.clipboard
 	      { johannes.homeProfile = "hyprland"; networking.hostName = "hyprland"; }
 	    ];
 	  };

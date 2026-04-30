@@ -3,6 +3,7 @@
     $mod = SUPER
     bind = $mod, RETURN, exec, kitty
     bind = $mod, D, exec, wofi --show drun
+    bind = $mod, V, exec, cursor-clip
 
     input {
       kb_layout = dk
@@ -12,5 +13,6 @@
     }
 
     exec-once = waybar
+    exec-once = cursor-clip --daemon
   '';
 }
