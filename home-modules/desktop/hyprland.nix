@@ -1,18 +1,31 @@
 { ... }: {
-  xdg.configFile."hypr/hyprland.conf".text = ''
-    $mod = SUPER
-    bind = $mod, RETURN, exec, kitty
-    bind = $mod, D, exec, wofi --show drun
-    bind = $mod, V, exec, cursor-clip
+  wayland.windowManager.hyprland.enable = true;
+  wayland.windowManager.hyprland.settings = {
 
-    input {
-      kb_layout = dk
-      kb_variant =
-      kb_model =
-      kb_rules =
-    }
+    monitor = ",preferred,auto,auto";
 
-    exec-once = waybar
-    exec-once = cursor-clip --daemon
-  '';
+    "$mod" = "SUPER";
+    bind = [
+      "$mod, RETURN, exec, kitty"
+      "$mod, D, exec, wofi --show drun"
+      "$mod, V, exec, cursor-clip"
+      "$mod, W, killactive,"
+    ];
+
+    input = {
+      kb_layout = "dk";
+      kb_variant = "";
+      kb_model = "";
+      kb_rules = "";
+
+      touchpad = {
+        natural_scroll = true;
+      };
+    };
+
+    "exec-once" = [
+      "waybar"
+      "cursor-clip --daemon"
+    ];
+  };
 }
