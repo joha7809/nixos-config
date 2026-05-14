@@ -33,8 +33,16 @@ in
       homeProfile = "gnome";
     };
 
+    joes-desktop = mkHost {
+      hostModule = self.nixosModules.host-desktop;
+      systemModule = self.nixosModules.desktop-hyprland;
+      homeProfile = "hyprland";
+    };
+
     # Legacy aliases, kept so existing commands still work.
     Hyprland = joes-machine-hyprland;
     Gnome = joes-machine-gnome;
+
+    Desktop = joes-desktop;
   };
 }
