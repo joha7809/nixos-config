@@ -57,11 +57,11 @@
   #   workspace_swipe = "on";
   # };
 
-  env = [
-    "XCURSOR_SIZE,24"
-    "GTK_THEME,Adwaita:dark"
-    "XDG_CURRENT_DESKTOP,Hyprland"
-  ];
+  # env = [
+  #   "XCURSOR_SIZE,24"
+  #   "GTK_THEME,Adwaita:dark"
+  #   "XDG_CURRENT_DESKTOP,Hyprland"
+  # ];
 
   "exec-once" = [
     "hyprpaper"
