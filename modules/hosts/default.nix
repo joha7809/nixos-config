@@ -1,10 +1,12 @@
 { self, inputs, ... }:
 let
-  mkHost = {
-    hostModule,
-    systemModule,
-    homeProfile,
-  }:
+  mkHost =
+    {
+      hostModule,
+      systemModule,
+      homeProfile,
+      extraModules ? [ ],
+    }:
     inputs.nixpkgs.lib.nixosSystem {
       modules = [
         self.nixosModules.system-base
@@ -13,10 +15,12 @@ let
         self.nixosModules.user-johannes
         self.nixosModules.keyboard
         self.nixosModules.clipboard
+        self.nixosModules.auth
         hostModule
         systemModule
         { johannes.homeProfile = homeProfile; }
-      ];
+      ]
+      ++ extraModules;
     };
 in
 {
@@ -37,6 +41,10 @@ in
       hostModule = self.nixosModules.host-desktop;
       systemModule = self.nixosModules.desktop-hyprland;
       homeProfile = "hyprland";
+
+      extraModules = [
+        self.nixosModules.gaming
+      ];
     };
 
     # Legacy aliases, kept so existing commands still work.

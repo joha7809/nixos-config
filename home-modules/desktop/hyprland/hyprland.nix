@@ -4,9 +4,9 @@
   home.packages = with pkgs; [
     alacritty
     wofi
-    waybar
-    mako
-    pamixer
+    # waybar
+    # mako
+    # pamixer
     hyprlock
   ];
 
@@ -15,11 +15,12 @@
   wayland.windowManager.hyprland.systemd.enable = true;
   wayland.windowManager.hyprland.systemd.variables = [ "--all" ];
 
-  services.hyprpaper.enable = true;
-  services.mako.enable = true;
+  # services.hyprpaper.enable = true;
+  # services.mako.enable = true;
 
-  programs.waybar.enable = true;
-  programs.hyprlock.enable = true;
+  # programs.waybar.enable = true;
+  # programs.hyprlock.enable = true;
+  #
   programs.alacritty.enable = true;
 
   xdg.portal = {
@@ -37,4 +38,5 @@
       xdg-desktop-portal-gtk
     ];
   };
+
 }

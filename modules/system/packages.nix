@@ -8,6 +8,12 @@
         curl
         wget
         codex
+
+        # For programming
+        nil
+        btop
+        neo
+        yazi
       ];
     };
 }

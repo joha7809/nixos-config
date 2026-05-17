@@ -1,4 +1,5 @@
-{ inputs, ... }: {
+{ inputs, ... }:
+{
   _module.args = { inherit inputs; };
   flake.homeManagerModules = rec {
     profile-base = import ../../home-modules/profiles/base.nix;

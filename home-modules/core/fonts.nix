@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    nerd-fonts._0xproto
+    nerd-fonts.fira-code
   ];
   fonts.fontconfig.enable = true;
 }

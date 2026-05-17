@@ -1,5 +1,7 @@
 {
-  monitor = [ "eDP-1,preferred,auto,1" ];
+
+  # TODO: Make this into a option field where each host can pass in their monitor
+  monitor = [ "DP-2,2560x1440@143.97Hz,auto,1" ];
 
   "$mod" = "SUPER";
 
@@ -10,6 +12,10 @@
     "col.active_border" = "rgba(88c0d0ff)";
     "col.inactive_border" = "rgba(3b4252ff)";
     layout = "dwindle";
+  };
+
+  cursor = {
+    no_hardware_cursors = true;
   };
 
   decoration = {
@@ -64,9 +70,10 @@
   # ];
 
   "exec-once" = [
-    "hyprpaper"
-    "waybar"
+    # "hyprpaper"
+    # "waybar"
+    "noctalia-shell"
     "cursor-clip --daemon"
-    "mako"
+    # "mako"
   ];
 }

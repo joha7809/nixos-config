@@ -4,14 +4,15 @@
   home.packages = with pkgs; [
     glib
     gsettings-desktop-schemas
+    nwg-look
   ];
 
   gtk = {
     enable = true;
 
     theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
+      name = "adw-gtk3-dark";
+      package = pkgs.adw-gtk3;
     };
 
     iconTheme = {
@@ -35,10 +36,15 @@
     size = 24;
   };
 
+  # home.sessionVariables = {
+  #   QT_QPA_PLATFORMTHEME = "gtk3";
+  # };
+
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-      gtk-theme = "Adwaita-dark";
+      gtk-theme = "adw-gtk3-dark";
     };
   };
+
 }

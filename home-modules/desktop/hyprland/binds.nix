@@ -1,4 +1,19 @@
+let
+  ipc = "noctalia-shell ipc call";
+in
 [
+  # Core binds
+  "$mod, SPACE, exec, ${ipc} launcher toggle"
+  "$mod, S, exec, ${ipc} controlCenter toggle"
+  "$mod, comma, exec, ${ipc} settings toggle"
+
+  # Media keys
+  ", XF86AudioRaiseVolume, exec, ${ipc} volume increase"
+  ", XF86AudioLowerVolume, exec, ${ipc} volume decrease"
+  ", XF86AudioMute, exec, ${ipc} volume muteOutput"
+  ", XF86MonBrightnessUp, exec, ${ipc} brightness increase"
+  ", XF86MonBrightnessDown, exec, ${ipc} brightness decrease"
+
   "$mod, RETURN, exec, alacritty"
   "$mod, D, exec, wofi --show drun"
   "$mod, V, exec, cursor-clip"
@@ -6,10 +21,10 @@
   "$mod SHIFT, Q, killwindow, active"
   "$mod, X, exec, hyprlock"
 
-  # volume
-  ", XF86AudioRaiseVolume, exec, pamixer -i 5"
-  ", XF86AudioLowerVolume, exec, pamixer -d 5"
-  ", XF86AudioMute, exec, pamixer -t"
+  # # volume
+  # ", XF86AudioRaiseVolume, exec, pamixer -i 5"
+  # ", XF86AudioLowerVolume, exec, pamixer -d 5"
+  # ", XF86AudioMute, exec, pamixer -t"
 
   # focus
   "$mod, H, movefocus, l"
