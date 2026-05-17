@@ -32,7 +32,7 @@
         modesetting.enable = true;
         open = false; # good default for 3080
         nvidiaSettings = true;
-        package = config.boot.kernelPackages.nvidiaPackages.latest;
+        package = config.boot.kernelPackages.nvidiaPackages.production;
       };
 
       powerManagement.cpuFreqGovernor = "perfomance";
